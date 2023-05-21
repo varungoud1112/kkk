@@ -20,7 +20,7 @@ if [[ $OSTYPE == 'linux-android'* && $(echo "$TERMUX_VERSION" | cut -c 3-5) -ge 
         done
     }
     cd kkk
-    ./main.sh
+    
 
 elif [[ $OSTYPE == 'linux-gnu'* ]]; then
     dpkg -s git >>/dev/null 2>&1 || sudo apt install git -y
