@@ -8,13 +8,13 @@ NC='\033[0m'
 
 if [[ $OSTYPE == 'linux-android'* && $(echo "$TERMUX_VERSION" | cut -c 3-5) -ge "117" ]]; then
     dpkg -s git >>/dev/null 2>&1 || pkg install git -y
-    git clone https://github.com/varungoud2000/kkk || {
+    git clone https://github.com/varungoud1112/kkk || {
         FILES='.tplaycreds .usercreds userDetails.json'
         for i in $FILES; do
             cp -frp "TataSky-Playlist-AutoUpdater/$i" .
         done
         rm -rf TataSky-Playlist-AutoUpdater
-        git clone https://github.com/varungoud2000/kkk
+        git clone https://github.com/varungoud1112/kkk
         for i in $FILES; do
             cp "$i" "kkk/"
         done
@@ -24,13 +24,13 @@ if [[ $OSTYPE == 'linux-android'* && $(echo "$TERMUX_VERSION" | cut -c 3-5) -ge 
 
 elif [[ $OSTYPE == 'linux-gnu'* ]]; then
     dpkg -s git >>/dev/null 2>&1 || sudo apt install git -y
-    git clone https://github.com/varungoud2000/kkk || {
+    git clone https://github.com/varungoud1112/kkk || {
         FILES='.tplaycreds .usercreds userDetails.json'
         for i in $FILES; do
             cp -frp "kkk/$i" .
         done
         rm -rf kkk
-        git clone https://github.com/varungoud2000/kkk
+        git clone https://github.com/varungoud1112/kkk
         for i in $FILES; do
             cp "$i" "kkk/"
         done
