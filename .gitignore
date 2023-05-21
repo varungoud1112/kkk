@@ -1,0 +1,14 @@
+.usercreds
+__pycache__/
+Tata-Sky-IPTV/
+source
+userDetails.json
+.userDetails.json
+.setupinitiated
+TataSky-Playlist-AutoUpdater
+debug.log
+TataSkyIPTV-Daily
+dyn_banner
+upload*.sh
+ad09427*/
+.tplaycreds
