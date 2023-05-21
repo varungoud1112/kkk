@@ -14,8 +14,8 @@ trap menu_exit 2
 # Print info
 info()
 {
-    printf "\n-- Tata Sky Playlist Auto-Updater --"
-    printf "\nAuthor: Shra1V32\n"
+    printf "\n-- kkk --"
+    printf "\nAuthor: kkk\n"
     echo "GitHub Profile: https://github.com/varungoud1112/kkk"
     printf '\n'
     printf "\n * This Script is for Automatically generating the Tata Sky M3U Playlists Everyday keep the Playlist URL Constant, It's only your IPTV Player which needs to refresh for every 24 Hrs. I would like to thank Gaurav Thakkar sincerely for his work on Playlist Generator. \n* Enter only valid information \n\n"
@@ -35,7 +35,7 @@ print_spaces(){
     printf "$(tput bold)$white_bg "
     done
 
-    printf "TataPlay Playlist AutoUpdater"
+    printf "kkk"
 
     for ((i=0; i<=$(( ($lines-29)/2)); i++)); do
     printf "$white_bg "
@@ -45,7 +45,7 @@ print_spaces(){
     printf "$white_bg "
     done
 
-    printf "$(tput sitm)by Shravan${NC}"
+    printf "$(tput sitm)by kkk${NC}"
 
     for ((i=0; i<$(( ($lines-10)/2)); i++)); do
     printf "$(tput bold)$white_bg "
