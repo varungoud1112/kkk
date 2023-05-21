@@ -11,9 +11,9 @@ if [[ $OSTYPE == 'linux-android'* && $(echo "$TERMUX_VERSION" | cut -c 3-5) -ge 
     git clone https://github.com/varungoud1112/kkk || {
         FILES='.tplaycreds .usercreds userDetails.json'
         for i in $FILES; do
-            cp -frp "TataSky-Playlist-AutoUpdater/$i" .
+            cp -frp "kkk/$i" .
         done
-        rm -rf TataSky-Playlist-AutoUpdater
+        rm -rf kkk
         git clone https://github.com/varungoud1112/kkk
         for i in $FILES; do
             cp "$i" "kkk/"
