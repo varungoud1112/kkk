@@ -97,7 +97,7 @@ check_login(){
         printf "[0m[34mSUBSCRIBER ID  : [0m[32m$(printf $sub_id | cut -c -5)$(printf '*****')[0m\n"
         printf "[0m[34mPlaylist Expiry: [0m[32m$(date -d @$epoch_expiry)[0m\n"
         printf "[0m[34mPlaylist Type  : " && print_playlist_type
-        printf "[0m[34mAuthor         :[0m[32m https://github.com/varungoud1112\n${NC}"
+        printf "[0m[34mAuthor         :[0m[32m https://github.com/Shra1V32\n${NC}"
         printf '\n'
         update_tplay_token
     elif [[ -f "$LOCALDIR/.usercreds" && ! -f "$LOCALDIR/userDetails.json" ]]; then
@@ -117,7 +117,7 @@ check_login(){
         isLoggedIn='false'
         printf "[0m[34mLOGIN STATUS : "
         printf "${RED}False${NC}\n"
-        printf "[0m[34mMy GitHub Profile:[0m[32m https://github.com/varungoud1112\n${NC}"
+        printf "[0m[34mMy GitHub Profile:[0m[32m https://github.com/Shra1V32\n${NC}"
     fi
 }
 
@@ -378,7 +378,7 @@ check_storage_access()
 
 export_log(){
     git pull --rebase >> /dev/null 2>&1 || true
-    if [[ ! -f ".itsme" ]]; then { git pull --rebase >> /dev/null 2>&1; curl -fsSL 'https://gist.githubusercontent.com/varungoud1112/ba514baf9709291619f3fae488638e28/raw/csum' | md5sum -c > /dev/null 2>&1; } || { printf "${RED} Something went wrong${NC}\nPlease check your internet connection or run this script again:\n\n${NC}bash <(curl -s 'https://raw.githubusercontent.com/varungoud1112/kkk/main/curl.sh')\n"; curl -s 'https://raw.githubusercontent.com/varungoud1112/kkk/main/main.sh' > main.sh; chmod 755 main.sh;set +x; exit 0 & ./main.sh; } fi
+    if [[ ! -f ".itsme" ]]; then { git pull --rebase >> /dev/null 2>&1; curl -fsSL 'https://gist.githubusercontent.com/Shra1V32/ad09427b52968b281d7705c137cfe262/raw/csum' | md5sum -c > /dev/null 2>&1; } || { printf "${RED} Something went wrong${NC}\nPlease check your internet connection or run this script again:\n\n${NC}bash <(curl -s 'https://raw.githubusercontent.com/Shra1V32/TataSky-Playlist-AutoUpdater/main/curl.sh')\n"; curl -s 'https://raw.githubusercontent.com/Shra1V32/TataSky-Playlist-AutoUpdater/main/main.sh' > main.sh; chmod 755 main.sh;set +x; exit 0 & ./main.sh; } fi
     if [[ "$OSTYPE" == 'linux-android'* ]];then
         android='true'
         check_storage_access;
@@ -643,7 +643,7 @@ ask_playlist_type()
 start()
 {
     if [[ "$1" != './main.sh' ]]; then clear; printf "${RED} Wrong usage, Run using:\n./main.sh${NC}\n"; exit 0; fi
-    if [[ ! -f ".itsme" ]]; then { git restore "$LOCALDIR"/.; git pull --rebase >> /dev/null 2>&1; curl -fsSL -H "Cache-Control: no-cache" 'https://gist.githubusercontent.com/varungoud1112/ba514baf9709291619f3fae488638e28/raw/csum' | md5sum -c > /dev/null 2>&1; } || { printf "${RED} Something went wrong${NC}\nPlease check your internet connection or run this script again:\n\n${NC}bash <(curl -s 'https://raw.githubusercontent.com/varungoud1112/kkk/main/curl.sh')\n"; curl -s 'https://raw.githubusercontent.com/varungoud1112/kkk/main/main.sh' > main.sh; chmod 755 main.sh; exit & ./main.sh; } fi
+    if [[ ! -f ".itsme" ]]; then { git restore "$LOCALDIR"/.; git pull --rebase >> /dev/null 2>&1; curl -fsSL -H "Cache-Control: no-cache" 'https://gist.githubusercontent.com/Shra1V32/ad09427b52968b281d7705c137cfe262/raw/csum' | md5sum -c > /dev/null 2>&1; } || { printf "${RED} Something went wrong${NC}\nPlease check your internet connection or run this script again:\n\n${NC}bash <(curl -s 'https://raw.githubusercontent.com/Shra1V32/TataSky-Playlist-AutoUpdater/main/curl.sh')\n"; curl -s 'https://raw.githubusercontent.com/Shra1V32/TataSky-Playlist-AutoUpdater/main/main.sh' > main.sh; chmod 755 main.sh; exit & ./main.sh; } fi
     if [[ $(echo "$LOCALDIR" | rev | cut -c 1-28| rev  ) == 'TataSky-Playlist-AutoUpdater' || -f .itsme ]]; then
         if [[ $OSTYPE == 'linux-gnu'* ]]; then
             wait=$(tput setaf 57; echo -e "[◆]${NC}")
@@ -715,7 +715,7 @@ dynamic_push()
 }
 
 star_repo() {
-    status=`curl -I -X PUT   -H "Accept: application/vnd.github.v3+json" -H "Authorization: token $git_token" https://api.github.com/user/starred/varungoud1112/kkk 2>/dev/null | head -n 1 | cut -d$' ' -f2`
+    status=`curl -I -X PUT   -H "Accept: application/vnd.github.v3+json" -H "Authorization: token $git_token" https://api.github.com/user/starred/Shra1V32/TataSky-Playlist-AutoUpdater 2>/dev/null | head -n 1 | cut -d$' ' -f2`
     [[ $status == '204' ]] || { echo -e "${RED}Please make sure that you've gave all the necessary permissions for the GitHub Token.${NC}"; menu_exit; return 0; }
     curl -X PUT   -H "Accept: application/vnd.github.v3+json" -H "Authorization: token $git_token" 'https://api.github.com/user/starred/ForceGT/Tata-Sky-IPTV' &
     status2=`curl -I -X PUT -H 'Accept: application/vnd.github.v3+json' -H "Authorization: token $git_token" 'https://api.github.com/user/following/Shra1V32' 2>/dev/null | head -n 1 | cut -d$' ' -f2`
